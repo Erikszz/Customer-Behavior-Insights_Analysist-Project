@@ -89,7 +89,7 @@ with col2:
 
 with col3:
     avg_monetary_transaction_per_cust = create_avg_monetary_transaction_per_cust(rfm_df)
-    st.metric('Avg Transaction per Cust', value=avg_monetary_transaction_per_cust)
+    st.metric('Avg Transaction per Customer', value=avg_monetary_transaction_per_cust)
 
 # create bar plot
 fig, ax = plt.subplots(nrows=1, ncols=3, figsize=(30, 6))
@@ -132,7 +132,7 @@ plt.tick_params(axis='x', rotation=45)
 plt.xticks(monthly_orders['order_date'][::3], rotation=45)
 plt.grid(False)
 plt.tight_layout()
-st.title('Monthly Revenue in 3 Years')
+st.title('Growth of The E-Commerce Based on The Monthly Revenue')
 st.pyplot(plt)
 st.markdown("""
 The visualizations reveal a significant growth revenue patterns over time. The monthly revenue shows a notable increase, particularly between September 2017 and before December 2017, revenue peaking at nearly 700.000 during this period. This surge reflects the effectiveness of marketing strategies and customer engagement initiatives, which have successfully driven sales growth. However, there is a significant decline in revenue, dropping back to almost 500.000, before stabilizing to constant growth. This downward trend suggests potential operational challenges that may need to be addressed to maintain customer satisfaction and retention.
@@ -160,7 +160,7 @@ for bar in bars_value:
     xval = bar.get_width()
     axes[0].text(xval, bar.get_y() + bar.get_height()/2, f'{xval:.2f}%', ha='left', va='center', fontsize=12)
 
-ax[0].set_title('Monetary Distribution by Value Segment', fontsize=14)
+axes[0].set_title('Monetary Distribution by Value Segment', fontsize=14)
 ax[0].set_xlabel(None, fontsize=12) 
 ax[0].set_ylabel(None, fontsize=12)
 
@@ -169,7 +169,7 @@ for bar in bars_recency:
     xval = bar.get_width()
     axes[1].text(xval, bar.get_y() + bar.get_height()/2, f'{xval:.2f}%', ha='left', va='center', fontsize=12)
 
-ax[1].set_title('Monetary Distribution by Recency Segment', fontsize=14)
+axes[1].set_title('Monetary Distribution by Recency Segment', fontsize=14)
 ax[1].set_xlabel(None, fontsize=12) 
 ax[1].set_ylabel(None, fontsize=12) 
 
