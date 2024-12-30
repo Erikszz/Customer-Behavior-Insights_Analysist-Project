@@ -75,7 +75,7 @@ rfm_df = create_rfm_df(df)
 monetary_percent_value, monetary_percent_recency = create_rfm_analysis(rfm_df)
 pivot_table_percent = create_heatmap_rfm(rfm_df)
 
-st.header('RFM Analysis of E-Commerce')
+st.header('Customer Behavior Insights through RFM Analysis in E-Commerce')
 st.subheader('Insights into Customer Segmentation and Revenue Based on RFM Analysis')
 col1, col2, col3 = st.columns(3)
 
